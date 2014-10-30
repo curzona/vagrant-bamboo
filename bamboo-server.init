@@ -1,0 +1,15 @@
+#!/bin/sh
+# /etc/init.d/bamboo-server -  startup script for bamboo
+
+case $1 in
+start)
+ start-stop-daemon --start  -c www-data --exec /opt/bamboo-server/bin/startup.sh
+;;
+
+stop)
+ start-stop-daemon --start -c www-data --exec /opt/bamboo-server/bin/shutdown.sh
+;;
+
+esac
+
+exit 0
